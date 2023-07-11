@@ -179,31 +179,72 @@ public class PantallaCalculadora extends JFrame {
 		botonDecimales.setBounds(127, 496, 51, 50);
 		contentPane.add(botonDecimales);
 		
+		
+		                                                             //  BOTTON  +  :
+		
 		JButton botonSumar = new JButton("+");
 		botonSumar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controlador.setNumeroUno(Double.parseDouble(consola.getText()));
+				controlador.setVariableOperacion("sumar");
 				
+				consola.setText("");
 			
 			}
 		});
 		botonSumar.setBounds(313, 272, 51, 50);
 		contentPane.add(botonSumar);
 		
-		JButton botonMultiplicar = new JButton("*");
+		JButton botonMultiplicar = new JButton("*");                         // BOTTON   MULTIPLICAR :  * 
+		botonMultiplicar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.setNumeroUno(Double.parseDouble(consola.getText()));
+				controlador.setVariableOperacion("multiplicar");
+				consola.setText("");
+			}
+		});
 		botonMultiplicar.setBounds(313, 422, 51, 50);
 		contentPane.add(botonMultiplicar);
+
 		
-		JButton botonRestar = new JButton("-");
+		JButton botonRestar = new JButton("-");                    // BOTTON   RESTAR  :  -
+		botonRestar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controlador.setNumeroUno(Double.parseDouble(consola.getText()));
+				controlador.setVariableOperacion("restar");
+				consola.setText("");
+			}
+		});
 		botonRestar.setBounds(313, 346, 51, 50);
 		contentPane.add(botonRestar);
 		
-		JButton botonDividir = new JButton("/");
+		JButton botonDividir = new JButton("/");                       // BOTTON  DIVIDIR  :  /
 		botonDividir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				controlador.setNumeroUno(Double.parseDouble(consola.getText()));
+				controlador.setVariableOperacion("dividir");
+				consola.setText("");
 			}
 		});
 		botonDividir.setBounds(313, 496, 51, 50);
 		contentPane.add(botonDividir);
+		
+		                                                      //  BOTTON IGUAL  :  =
+		
+		JButton botonIgual = new JButton("=");
+		botonIgual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				controlador.setNumeroDos(Double.parseDouble(consola.getText()));
+		        
+		        consola.setText(Double.toString(controlador.sumar()));
+		       
+		       
+		        
+		        
+			}
+		});
+		botonIgual.setBounds(211, 496, 51, 50);
+		contentPane.add(botonIgual);
 	}
 }
