@@ -55,6 +55,7 @@ public class PantallaCalculadora extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(btnNewButton, consola.getText());
+				// esto es una prueba
 				
 			}
 		});
